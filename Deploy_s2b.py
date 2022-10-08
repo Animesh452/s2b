@@ -26,7 +26,7 @@ from firebase_admin import storage
 
 if not firebase_admin._apps:
     cred = credentials.Certificate('key.json') 
-    default_app = firebase_admin.initialize_app(cred)
+    default_app = firebase_admin.initialize_app(cred, {'storageBucket': "scribe-1b189.appspot.com"})
 
 
 
