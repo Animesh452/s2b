@@ -65,4 +65,4 @@ uritemplate==4.1.1
 urllib3==1.26.12
 validators==0.20.0
 watchdog==2.1.9
-
+protobuf~=3.19.0
