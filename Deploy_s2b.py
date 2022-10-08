@@ -221,16 +221,18 @@ class Paper:
 
         #self.image.save("./output/" + self.name + " pg" + str(self._page) + ".png")
 
-        img="./"+self.name + " pg" + str(self._page) + ".png"
+        img=self.name + " pg" + str(self._page) + ".png"
+        opnimg=Image.open(img)
+        st.image(opnimg)
         #storage.child(self.name + " pg" + str(self._page) + ".png").put(self.name + " pg" + str(self._page) + ".png")
         #imgUrl = storage.child(self.img).get_url(user['idToken'])
         #st.image(imgUrl)
         #print(imgUrl)
-        bucket_name = "scribe-1b189.appspot.com"
-        destination_blob_name = "storage-object-name"
-        bucket = storage.bucket(bucket_name)
-        blob = bucket.blob(os.path.basename(img))
-        blob.upload_from_filename(filename=img, content_type='image/png')
+#         bucket_name = "scribe-1b189.appspot.com"
+#         destination_blob_name = "storage-object-name"
+#         bucket = storage.bucket(bucket_name)
+#         blob = bucket.blob(os.path.basename(img))
+#         blob.upload_from_filename(filename=img, content_type='image/png')
 
 
     def show(self):
