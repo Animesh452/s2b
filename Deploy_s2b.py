@@ -29,7 +29,8 @@ config = {
     "projectId": "scribe-1b189",
     "storageBucket": "scribe-1b189.appspot.com",
     "messagingSenderId": "524961665751",
-    "appId": "1:524961665751:web:dca3a32a7ce777fa175692"
+    "appId": "1:524961665751:web:dca3a32a7ce777fa175692",
+    "measurementId": "G-FC7WJ5JC96"
 }
 
 firebase = pyrebase.initialize_app(config)
@@ -228,8 +229,8 @@ class Paper:
 
         #self.image.save("./output/" + self.name + " pg" + str(self._page) + ".png")
 
-        self.img=self.name + " pg" + str(self._page) + ".png"
-        storage.child(self.img).put(self.img)
+        #img=self.name + " pg" + str(self._page) + ".png"
+        storage.child(self.name + " pg" + str(self._page) + ".png").put(self.name + " pg" + str(self._page) + ".png")
         #imgUrl = storage.child(img).get_url(user['idToken'])
         #st.markdown(imgUrl)
         #print(imgUrl)
