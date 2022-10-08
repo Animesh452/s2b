@@ -26,7 +26,7 @@ from firebase_admin import storage
 
 if not firebase_admin._apps:
     cred = credentials.Certificate('key.json') 
-    default_app = firebase_admin.initialize_app(cred, {'storageBucket': "scribe-1b189.appspot.com"})
+    default_app = firebase_admin.initialize_app(cred)
 
 
 
@@ -226,11 +226,10 @@ class Paper:
         #imgUrl = storage.child(self.img).get_url(user['idToken'])
         #st.image(imgUrl)
         #print(imgUrl)
-        #bucket_name = "scribe-1b189.appspot.com"
+        bucket_name = "scribe-1b189.appspot.com"
         destination_blob_name = "storage-object-name"
-        bucket = storage.bucket()
+        bucket = storage.bucket(bucket_name)
         blob = bucket.blob(img)
-
         blob.upload_from_filename(img)
 
 
