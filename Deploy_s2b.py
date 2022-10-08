@@ -20,23 +20,10 @@ import time
 from pydub import AudioSegment
 import sys
 import pyrebase
+from firebase_admin import credentials, initialize_app, storage
 
-
-config = {
-    "apiKey": "AIzaSyCwM3CrN_wllsZ_V7ZlrrRS5oGS5B4quUM",
-    "authDomain": "scribe-1b189.firebaseapp.com",
-    "databaseURL": "https://scribe-1b189-default-rtdb.firebaseio.com",
-    "projectId": "scribe-1b189",
-    "storageBucket": "scribe-1b189.appspot.com",
-    "messagingSenderId": "524961665751",
-    "appId": "1:524961665751:web:dca3a32a7ce777fa175692",
-    "measurementId": "G-FC7WJ5JC96"
-}
-
-firebase = pyrebase.initialize_app(config)
-storage = firebase.storage()
-auth = firebase.auth()
-user = auth.sign_in_with_email_and_password("animeshk452@gmail.com", "012345#jhoN")
+cred = credentials.Certificate("key.json")
+initialize_app(cred, {'storageBucket': 'scribe-1b189.appspot.com'})
 
 
 API_KEY_ASSEMBLYAI = '31d08ebfe16243d1b87ae65e76d2d95c' #API key provided by AssemblyAI for access
@@ -228,12 +215,10 @@ class Paper:
         """Saves the image to a physical file that is the name the object was created with"""
 
         #self.image.save("./output/" + self.name + " pg" + str(self._page) + ".png")
-
-        #img=self.name + " pg" + str(self._page) + ".png"
-        storage.child(self.name + " pg" + str(self._page) + ".png").put(self.name + " pg" + str(self._page) + ".png")
-        #imgUrl = storage.child(img).get_url(user['idToken'])
-        #st.markdown(imgUrl)
-        #print(imgUrl)
+        fileName = self.name + " pg" + str(self._page) + ".png"
+        bucket = storage.bucket()
+        blob = bucket.blob(fileName)
+        blob.upload_from_filename(fileName)
 
 
     def show(self):
