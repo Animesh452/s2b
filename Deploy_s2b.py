@@ -221,7 +221,7 @@ class Paper:
 
         #self.image.save("./output/" + self.name + " pg" + str(self._page) + ".png")
 
-        img=self.name + " pg" + str(self._page) + ".png"
+        img="./"+self.name + " pg" + str(self._page) + ".png"
         #storage.child(self.name + " pg" + str(self._page) + ".png").put(self.name + " pg" + str(self._page) + ".png")
         #imgUrl = storage.child(self.img).get_url(user['idToken'])
         #st.image(imgUrl)
