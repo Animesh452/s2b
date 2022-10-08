@@ -23,7 +23,7 @@ import pyrebase
 from firebase_admin import credentials, initialize_app, storage
 
 cred = credentials.Certificate("key.json")
-initialize_app(cred, {'storageBucket': 'scribe-1b189.appspot.com'})
+initialize_app(cred)
 
 
 API_KEY_ASSEMBLYAI = '31d08ebfe16243d1b87ae65e76d2d95c' #API key provided by AssemblyAI for access
