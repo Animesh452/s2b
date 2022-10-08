@@ -228,10 +228,10 @@ class Paper:
 
         #self.image.save("./output/" + self.name + " pg" + str(self._page) + ".png")
 
-        img=self.name + " pg" + str(self._page) + ".png"
-        storage.child(img).put(img)
-        imgUrl = storage.child(img).get_url(user['idToken'])
-        st.markdown(imgUrl)
+        self.img=self.name + " pg" + str(self._page) + ".png"
+        storage.child(self.img).put(self.img)
+        #imgUrl = storage.child(img).get_url(user['idToken'])
+        #st.markdown(imgUrl)
         #print(imgUrl)
 
 
