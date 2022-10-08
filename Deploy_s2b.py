@@ -231,8 +231,8 @@ class Paper:
         img=self.name + " pg" + str(self._page) + ".png"
         storage.child(img).put(img)
         imgUrl = storage.child(img).get_url(user['idToken'])
-        st.image(imgUrl)
-        print(imgUrl)
+        st.markdown(imgUrl)
+        #print(imgUrl)
 
 
     def show(self):
