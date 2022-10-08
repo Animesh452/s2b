@@ -229,8 +229,8 @@ class Paper:
         bucket_name = "scribe-1b189.appspot.com"
         destination_blob_name = "storage-object-name"
         bucket = storage.bucket(bucket_name)
-        blob = bucket.blob(img)
-        blob.upload_from_filename(img)
+        blob = bucket.blob(os.path.basename(img))
+        #blob.upload_from_filename(img)
 
 
     def show(self):
