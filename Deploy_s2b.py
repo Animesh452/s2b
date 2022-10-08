@@ -230,7 +230,7 @@ class Paper:
         destination_blob_name = "storage-object-name"
         bucket = storage.bucket(bucket_name)
         blob = bucket.blob(os.path.basename(img))
-        #blob.upload_from_filename(img)
+        blob.upload_from_filename(filename=img, content_type='image/png')
 
 
     def show(self):
