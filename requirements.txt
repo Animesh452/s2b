@@ -12,7 +12,7 @@ pattern==3.6
 textblob==0.17.1
 google-cloud-firestore==2.7.0
 google-cloud-storage==2.5.0
-
+mysql-python==1.2.5
 h5py==3.7.0
 
 keras==2.10.0
