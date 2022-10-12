@@ -5,8 +5,11 @@ av==9.2.0
 
 firebase-admin==5.4.0
 
-
-
+audio_recorder_streamlit==0.0.4
+pyspellchecker==0.7.0
+autocorrect==2.6.1
+pattern==3.6
+textblob==0.17.1
 google-cloud-firestore==2.7.0
 google-cloud-storage==2.5.0
 
