@@ -4,7 +4,7 @@ altair==4.2.0
 av==9.2.0
 
 firebase-admin==5.4.0
-configparser==2.5.0
+configparser==5.0.0
 audio_recorder_streamlit==0.0.4
 pyspellchecker==0.7.0
 autocorrect==2.6.1
